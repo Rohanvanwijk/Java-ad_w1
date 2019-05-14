@@ -4,11 +4,15 @@ public class Camera {
     int id;
     String brand;
     String model;
+    double price;
+    int amount;
 
-    public Camera(int id, String brand, String model) {
+    public Camera(int id, String brand, String model, double price, int amount) {
         this.id = id;
         this.brand = brand;
         this.model = model;
+        this.price = price;
+        this.amount = amount;
     }
 
     public Camera() {}
@@ -27,6 +31,22 @@ public class Camera {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public int getId() {
