@@ -46,7 +46,11 @@ public class CamerashopService {
     }
 
     public void removeCameraById(int id) {
-        Optional<Camera> op = cameras.stream().filter(x -> x.getId() == id).findFirst();
+        // Null camera
+        Camera emptyCam = new Camera(0, "", "", 00.00, 0);
+
+        // Optional altijd uitkijken voor leeg ID
+        Optional<Camera> op = Optional.of(cameras.stream().filter(x -> x.getId() == id).findFirst().orElse(emptyCam));
         Camera cam = op.get();
         cameras.remove(cam);
     }
